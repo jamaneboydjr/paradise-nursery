@@ -1,34 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 
 export default function AboutUs() {
   return (
-    <>
-      <Navbar />
-      <div style={{ padding: "24px", maxWidth: 900, margin: "0 auto" }}>
-        <h1>About Paradise Nursery</h1>
-        <p>
-          Paradise Nursery is a home-plant shop built for people who want their space to
-          feel alive—clean air, calmer energy, and a little more beauty in the everyday.
-        </p>
-        <p>
-          Our mission is simple: make it easy to discover plants that fit your lifestyle,
-          whether you’re a first-time plant parent or building a full indoor jungle.
-          Every plant in our collection includes clear pricing, simple descriptions,
-          and a smooth cart experience so you can shop with confidence.
-        </p>
-        <p>
-          We focus on quality houseplants, careful handling, and beginner-friendly options
-          that thrive indoors.
-        </p>
+    <div className="about-us-container">
+      <h1>About Paradise Nursery</h1>
 
-        <div style={{ marginTop: 20 }}>
-          <Link to="/plants" style={{ textDecoration: "underline" }}>
-            Browse Plants →
-          </Link>
-        </div>
-      </div>
-    </>
+      <p>
+        Paradise Nursery is an online plant shop created to make it easy for people to
+        bring greenery into their homes. We offer carefully selected houseplants that
+        work for beginners and experienced plant owners.
+      </p>
+
+      <p>
+        Our mission is to provide healthy, affordable plants with clear product details,
+        simple shopping, and a smooth cart experience. Whether you want low-maintenance
+        plants or statement tropicals, Paradise Nursery helps you choose with confidence.
+      </p>
+
+      <p>
+        We focus on quality, consistency, and customer care—so your plants arrive ready
+        to thrive in your space.
+      </p>
+    </div>
   );
 }
