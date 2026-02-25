@@ -1,23 +1,3 @@
-paradise-nursery/
-  README.md
-  src/
-    App.jsx
-    App.css
-    main.jsx
-    assets/
-      nursery-bg.jpg
-    pages/
-      AboutUs.jsx
-      ProductList.jsx
-      CartItem.jsx
-    redux/
-      store.js
-      CartSlice.jsx
-    components/
-      Navbar.jsx
-
-Part 1 
-
 # Paradise Nursery Shopping Cart
 
 A dynamic React shopping cart application for an online plant shop called **Paradise Nursery**.
