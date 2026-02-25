@@ -1,19 +1,39 @@
-import React, { useState } from "react";
-import ProductList from "./ProductList"; // adjust path if needed
+import { createSlice } from "@reduxjs/toolkit";
 
-export default function App() {
-  const [showProducts, setShowProducts] = useState(false);
+const initialState = {
+  cartItems: [], // { id, name, price, image, quantity }
+};
 
-  return (
-    <div>
-      {!showProducts ? (
-        <div className="landing-page">
-          <h1>Paradise Nursery</h1>
-          <button onClick={() => setShowProducts(true)}>Get Started</button>
-        </div>
-      ) : (
-        <ProductList />
-      )}
-    </div>
-  );
-}
+const cartSlice = createSlice({
+  name: "cart",
+  initialState,
+  reducers: {
+    addItem: (state, action) => {
+      const item = action.payload;
+      const existing = state.cartItems.find((p) => p.id === item.id);
+
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        state.cartItems.push({ ...item, quantity: 1 });
+      }
+    },
+
+    removeItem: (state, action) => {
+      const id = action.payload;
+      state.cartItems = state.cartItems.filter((p) => p.id !== id);
+    },
+
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.cartItems.find((p) => p.id === id);
+
+      if (item) {
+        item.quantity = quantity;
+      }
+    },
+  },
+});
+
+export const { addItem, removeItem, updateQuantity } = cartSlice.actions;
+export default cartSlice.reducer;
